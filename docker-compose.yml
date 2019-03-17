@@ -1,0 +1,57 @@
+version: '3'
+
+#
+#######################################
+# Folder structure
+#######################################
+#
+# (1) This boilerplate assumes that `index.php` is stored inside `htdocs`.
+#
+# However, for a more secure setup, the following is recommended:
+# (2) In addition to (1), `assets`, `index.php` & `.htaccess` are
+# stored inside `public`.
+#
+# See https://getkirby.com/docs/guide/configuration#custom-folder-setup
+#
+
+services:
+  php:
+    build:
+      context: htdocs
+      dockerfile: docker/php.dockerfile
+    volumes:
+      - sock:/sock
+      # (1)
+      - ./htdocs:/app
+      # (2)
+      # - ./htdocs/public:/app/public
+      # - ./htdocs/site:/app/site
+      # - ./htdocs/storage:/app/storage
+      # - ./htdocs/vendor:/app/vendor
+    networks:
+      - php-net
+
+  nginx:
+    build:
+      context: htdocs
+      dockerfile: docker/nginx.dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - sock:/sock
+      # (1)
+      - ./htdocs:/app
+      # (2)
+      # - ./htdocs/public:/app/public:ro
+    depends_on:
+      - php
+    networks:
+      - php-net
+
+volumes:
+  sock:
+    driver: local
+
+networks:
+  php-net:
+    driver: bridge

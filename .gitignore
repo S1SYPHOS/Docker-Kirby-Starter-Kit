@@ -1,0 +1,10 @@
+# System files
+# ------------
+
+Icon
+.DS_Store
+
+# Kirby
+# ------------
+
+/htdocs
