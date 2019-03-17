@@ -51,7 +51,7 @@ However, for a [more secure setup](https://getkirby.com/docs/guide/configuration
 htdocs/
 ├── content
 ├── kirby
-└── public
+├── public
 │   ├── assets
 │   ├── .htaccess
 │   └── index.php
