@@ -25,7 +25,7 @@ Download or clone this repository, then install the [Gulp/Kirby StarterKit](http
 composer create-project s1syphos/gulp-kirby-starter-kit htdocs --no-dev --prefer-dist
 
 # Git
-git clone https://github.com/S1SYPHOS/Gulp-Kirby-Starter-Kit.git your-project
+git clone https://github.com/S1SYPHOS/Gulp-Kirby-Starter-Kit.git htdocs
 
 # Move docker configuration files
 mv docker htdocs/
@@ -64,7 +64,7 @@ htdocs/
 
 ```
 
-The webserver only exposes the `public` directory, which contains `assets`, `index.php` and `.htaccess`. For this to work, simply move some files around, update your `index.php` (Gulp/Kirby StarterKit [got your back](https://github.com/S1SYPHOS/Gulp-Kirby-Starter-Kit/blob/master/index.php)) and `docker-compose.yml` (just comment/uncomment some lines). 
+The webserver only exposes the `public` directory, which contains `assets`, `index.php` and `.htaccess`. For this to work, simply move some files around, update your `index.php` (Gulp/Kirby StarterKit [got your back](https://github.com/S1SYPHOS/Gulp-Kirby-Starter-Kit/blob/master/index.php)) and `docker-compose.yml` (just comment/uncomment some lines).
 
 ## Credits
 @rasteiner's [k3-dockercompose-starterkit](https://github.com/rasteiner/k3-dockercompose-starterkit) inspired this boilerplate - he deserves all the credit.
